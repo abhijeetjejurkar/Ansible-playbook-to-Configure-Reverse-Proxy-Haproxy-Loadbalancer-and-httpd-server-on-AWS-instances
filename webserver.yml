@@ -1,0 +1,20 @@
+- hosts: tag_name_webserver
+  tasks: 
+  - name: Installing HTTPD 
+    package: 
+        name: "httpd"
+        state: present
+  - name: Installing  PHP
+    package:
+            name: "php"
+            state: present
+    ignore_errors: yes
+
+  - name:  Copying HTML file 
+    copy:
+            dest: "/var/www/html/index.php"
+            src: "/root/task12.2/index.php"
+  - name: Starting HTTPD service
+    service:
+            name: "httpd"
+            state: restarted

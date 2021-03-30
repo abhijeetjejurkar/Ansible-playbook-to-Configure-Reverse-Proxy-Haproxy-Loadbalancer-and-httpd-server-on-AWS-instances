@@ -1,0 +1,20 @@
+- hosts: localhost
+  vars_files:
+          var.yml
+  tasks:
+    - name: ec2 instance
+      ec2:
+              region: "{{region}}"
+              image: ami-042b34111b1289ccd
+              instance_type: t2.micro
+              group_id: sg-014ee032d08ac18e5
+              key_name: main
+              count: 1
+              instance_tags:
+                      name: ubuntu
+              state: present
+              vpc_subnet_id: subnet-3b141d53
+              aws_access_key: "{{aws_access}}"
+              aws_secret_key: "{{aws_secret}}"
+    
+                   

@@ -1,0 +1,8 @@
+https://raw.githubusercontent.com/ansible/ansible/stable-2.9/contrib/inventory/ec2.py
+
+https://raw.githubusercontent.com/ansible/ansible/stable-2.9/contrib/inventory/ec2.ini 
+
+
+export AWS_ACCESS_KEY= 'AKIAQJWL32U6TQGYBJUU'
+export AWS_SECRET_KEY= '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'
+export AWS_REGION= 'ap-south-1'

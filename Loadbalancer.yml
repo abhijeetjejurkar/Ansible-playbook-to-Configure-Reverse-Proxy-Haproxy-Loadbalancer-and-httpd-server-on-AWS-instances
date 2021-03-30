@@ -1,0 +1,14 @@
+- hosts: tag_name_loadbalancer
+  tasks:
+  - name: Installing Haproxy 
+    package:
+            name: "haproxy"
+            state: present
+  - name: Configuring haproxy.cfg File
+    template: 
+        dest: "/etc/haproxy/haproxy.cfg"
+        src: "/root/task12.2/haproxy.cfg.j2"
+  - name: Starting Haproxy Service 
+    service: 
+        name: "haproxy"
+        state: restarted 
